@@ -2,7 +2,7 @@ import allure
 import requests
 import pytest
 
-from data_test import Users
+from data_test import Users, TextError
 from handles import Handle
 from urls import Urls
 
@@ -48,5 +48,5 @@ class TestLoginCourier:
             "password": password
         }
         response = requests.post(f'{Urls.BASE_URL}{Handle.LOGIN_COURIER}', data=payload)
-        assert response.status_code == 404 and 'Учетная запись не найдена' in response.text
+        assert response.status_code == 404 and TextError.account_not_found in response.text
 

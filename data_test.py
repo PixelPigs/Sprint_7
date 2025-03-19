@@ -1,6 +1,5 @@
 from faker import Faker
 
-
 fake = Faker()
 
 def courier_registration():
@@ -14,6 +13,10 @@ def courier_registration():
     }
     return data_registration
 
+class TextError:
+    login_used = 'Этот логин уже используется'
+    account_not_found = 'Учетная запись не найдена'
+    not_enough_data = 'Недостаточно данных для создания учетной записи'
 
 class Users:
     correct_data = {
@@ -38,4 +41,3 @@ class Orders:
     "comment": "Saske, come back to Konoha",
     "color": ""
 }
-
